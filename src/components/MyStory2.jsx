@@ -1,0 +1,37 @@
+import MyStoryimg from "../assets/img/icon-story.png";
+
+const MyStory2 = ({ titre, posts, category, description, date, time }) => {
+  return (
+    <article className="rounded-[1.5rem] border border-white/10 bg-slate-950/20 p-6 shadow-lg shadow-black/20 backdrop-blur transition hover:-translate-y-1 hover:border-secondary/50 sm:p-8">
+      <div className="flex flex-wrap items-center justify-between gap-3 pb-6">
+        <div className="flex items-center gap-3">
+          <div className="rounded-full bg-secondary/20 p-2">
+            <img src={MyStoryimg} alt="icon story" className="h-5 w-5" />
+          </div>
+          <h3 className="text-xl font-semibold text-white">{titre}</h3>
+        </div>
+        <a href="/blog" className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 transition hover:text-secondary">
+          {posts}
+          <img src={MyStoryimg} className="h-4 w-4" alt="arrow right" />
+        </a>
+      </div>
+      <div className="rounded-[1rem] border border-white/10 bg-white/5 p-5">
+        <span className="mb-4 inline-flex rounded-full border border-secondary/30 bg-secondary/15 px-3 py-1 text-sm text-secondary">
+          {category}
+        </span>
+        <a href="/blog" className="block text-lg font-semibold text-white transition hover:text-secondary">
+          {description}
+        </a>
+        <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-400">
+          <p>{date}</p>
+          <span>•</span>
+          <p>{time}</p>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+
+
+export default MyStory2;
